@@ -1,7 +1,8 @@
-// using pure js 
 
-for(var i=0; i<document.querySelectorAll(".drum").length; i++){
-    document.querySelectorAll(".drum")[i].addEventListener("click",function(){
+//using jquery 
+
+for(var i=0; i<$(".drum").length; i++){
+    $(".drum")[i].addEventListener("click",function(){
         
         var ButtonInnerHTML = this.innerHTML;
         makeSound(ButtonInnerHTML);
@@ -10,7 +11,7 @@ for(var i=0; i<document.querySelectorAll(".drum").length; i++){
         
  });
 
- document.addEventListener("keypress", function(event){
+ $("keypress", function(event){
     makeSound(event.key);
     buttonAnimation(event.key);
 
@@ -62,7 +63,7 @@ for(var i=0; i<document.querySelectorAll(".drum").length; i++){
  }
 
  function buttonAnimation(currentKey){
-    var activeKey = document.querySelector("." + currentKey);
+    var activeKey = $("." + currentKey);
     activeKey.classList.add("pressed");
 
     setTimeout(function(){
@@ -70,9 +71,6 @@ for(var i=0; i<document.querySelectorAll(".drum").length; i++){
      },100);
     
  }
-
- 
-
 
 }
 
